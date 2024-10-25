@@ -1,4 +1,4 @@
-pritn('test code!')
+print('test code!')
 class ClassName(object):
 	"""docstring for ClassName"""
 	def __init__(self, arg):
