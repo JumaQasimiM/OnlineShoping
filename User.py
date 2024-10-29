@@ -1,47 +1,52 @@
 # User file
+from datetime import datetime
+import bcrypt
+from databaseconnection import DatabaseConnection
+
 class User:
 	""" User class"""
 	roll = 'Admin' # class variable shared by all instances
-	def __init__(self, name, password, roll):
+
+	def __init__(self, username, password, email):
 		# instance variable unique to each instance
-		self.name = name  
+		self.username = username  
 		self.password = password
-		self.roll = roll
+		self.email = email
+		self.created_at = datetime.now()
 
 	def __repr__(self):
 		return f"user : {self.name}, roll : {self.roll}"
 
-	def get_user_by_id(self, user_id):
-		if user_id == -1:
-			# not found
-			pass
-		else:
-			# form db take the user 
-			pass
+	# Hash password
+	@staticmethod
+	def hash_password(password):
+		salt = bcrypt.gensalt()
+		hashed_password = bcrypt.hashpw(password.encode('utf-8'),salt)
+		return hashed_password
 
-	def remove_user(self, user_id):
-		if user_id is not None:
-			# found
-			# SELECT FROM TABLE user ...
-			print('user found')
+	@staticmethod
+	def verify_password(hashed_password, password):
+		return bcrypt.checkpw(password.encode('utf-8'),hashed_password)
 
 
 	@staticmethod
-	def get_all_user():
-		pass
+	def get_user_by_username(username):
+		curser = DatabaseConnection.get_curser()
+		# not complet
+
+	@staticmethod
+	def authentication(username, password):
+		user_data = User.get_user_by_username(username)
+		if user_data:
+			sorted_password = user_data[2]
+				if User.verify_password(sorted_password, password):
+					return user_data
+				return None
 
 
 # create Object
 if __name__ =='__main__':
-	u = User('juma','jksdhf','Admin')
-	u.get_user_by_id(241234)
-
-	# static method
-	User.get_all_user()
-
-
-
-
+	pass
 
 
 
