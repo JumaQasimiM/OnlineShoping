@@ -7,10 +7,11 @@ class User:
 		self.name = name  
 		self.password = password
 		self.roll = roll
-
+		
 	def __repr__(self):
 		return f"user : {self.name}, roll : {self.roll}"
 
+	# get user form database
 	def get_user_by_id(self, user_id):
 		if user_id == -1:
 			# not found
@@ -18,7 +19,7 @@ class User:
 		else:
 			# form db take the user 
 			pass
-
+	# delete form database
 	def remove_user(self, user_id):
 		if user_id == -1:
 			# not found
@@ -26,7 +27,6 @@ class User:
 		else:
 			# delete
 			pass
-
 	@staticmethod
 	def get_all_user():
 		pass
