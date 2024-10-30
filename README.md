@@ -11,8 +11,8 @@ for hash_password and verify_password
 
 - [x] #739
 - [ ] https://github.com/octo-org/octo-repo/issues/740
-@octocat :+1: This PR looks great - it's ready to merge! :shipit:
-
+@octocat :+1: This PR looks great - it's ready to merge! :shipit: 
+:heart::yellow_heart: :blue_heart:
 Here is a simple footnote[^1].
 
 A footnote can also have multiple lines[^2].
