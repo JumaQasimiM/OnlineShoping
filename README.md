@@ -3,7 +3,7 @@
 ##### bcrypt library
 ## Installation
 #### To install bcrypt, simply:
-### $ pip install bcrypt
+#### $ pip install bcrypt
 For password encryption and decryption
 for hash_password and verify_password
 ##### datetime
