@@ -12,7 +12,16 @@ class Products:
 
 	# save 
 	def save(self):
-		pass
+		# save new product in database
+
+		curser = DatabaseConnection.get_cursor()
+		curser.execute('''INSERT INTO 
+							products (name, description, price, category, stock,created_at) 
+						  VALUES (?,?,?,?,?,?)''',
+						  	(self.name, self.description, self.price, self.category, self.stock))
+
+		DatabaseConnection._connection.commit()
+
 
 	def get_product_by_id(product_id):
 		pass

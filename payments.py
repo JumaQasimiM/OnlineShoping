@@ -15,11 +15,10 @@ class Payment:
 
 	def save(self):
 		# database connention
-
-		curser = DatabaseConnection.get_curser()
+		curser = DatabaseConnection.get_cursor()
 		# curser.execute('''INSERT INTO payment (order_id, ...) VALUSE (?, ?, ?,...)''',(self.order_id,...))
 
 		DatabaseConnection._connection.commit()
-		pass
+		
 
 
