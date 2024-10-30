@@ -9,4 +9,7 @@ https://docs.github.com/en/get-started/writing-on-github/getting-started-with-wr
 > pip install bycript
 > ### datetime.
 
+> [!CAUTION]
+> this Project is not a real Project.
+> this is only for learning.
 
