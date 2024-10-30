@@ -6,6 +6,7 @@ https://docs.github.com/en/get-started/writing-on-github/getting-started-with-wr
 > [!TIP]
 > install importtant libraries
 > ### bycript
+> pip install bycript
 > ### datetime.
 
 
