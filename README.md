@@ -1,6 +1,9 @@
 # Onlin Shoping PROJECT
 ### import important libraries
 ##### bcrypt library
+## Installation
+#### To install bcrypt, simply:
+### $ pip install bcrypt
 For password encryption and decryption
 for hash_password and verify_password
 ##### datetime
