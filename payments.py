@@ -1,7 +1,6 @@
-# Payments file
-
 from datetime import datetime
 from databaseconnection import DatabaseConnection
+
 class Payment:
 	def __init__(self, order_id, amount, payment_method, status= 'panding'):
 		self.order_id = order_id
@@ -16,8 +15,7 @@ class Payment:
 	def save(self):
 		# database connention
 		curser = DatabaseConnection.get_cursor()
-		# curser.execute('''INSERT INTO payment (order_id, ...) VALUSE (?, ?, ?,...)''',(self.order_id,...))
-
+		# curser.execute('''INSERT INTO payments (order_id, ...) VALUSE (?, ?, ?,...)''',(self.order_id,...))
 		DatabaseConnection._connection.commit()
 		
 

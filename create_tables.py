@@ -12,8 +12,8 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOIN
 						created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 						  );''')
 
-# create orders table
 
+# create orders table
 cursor.execute('''CREATE TABLE IF NOT EXISTS orders(id INTEGER PRIMARY KEY AUTOINCREMENT ,
 						user_id INTEGER NOT NULL,
 						totle_amount INTEGER NOT NULL,

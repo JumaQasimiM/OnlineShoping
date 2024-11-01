@@ -10,15 +10,12 @@ class Products:
 		self.stock = stock
 		self.created_at = datetime.now()
 
-
-	# save 
+	# save new product in database
 	def save(self):
-		# save new product in database
 		curser = DatabaseConnection.get_cursor()
 		curser.execute('''INSERT INTO products (name, description, price, category, stock,created_at) 
 						  VALUES (?,?,?,?,?,?)''',(self.name, self.description, self.price, self.category, self.stock))
 		DatabaseConnection._connection.commit()
-
 
 	def get_product_by_id(product_id):
 		pass
@@ -29,8 +26,6 @@ class Products:
 	def get_all_product(cls):
 		# 'SELECT * FROM products'
 		pass
-
-
 if __name__ == '__main__':
 	new_product = Products(name = 'Computer',description = 'cori-7', price = 1200,category='Electronice',stock = 144)
 	# save new product

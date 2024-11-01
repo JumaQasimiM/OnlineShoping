@@ -10,7 +10,6 @@ class Category:
 
 	def __repr__(self):
 		return f"Category name: {self.name}, description: {self.description}"
-
 	# save into database
 	def save(self):
 		cursor = DatabaseConnection.get_cursor()
@@ -18,22 +17,3 @@ class Category:
 			(self.name, self.description, self.parent_id))
 		DatabaseConnection._connection.commit()
 
-	# get by id and get all 
-
-'''
-Parent_id:
-1:Book
-2:electornik
-3:...
-
-'''
-if __name__ == '__main__':
-	new_category = Category('Book', 'Electronik book',1)
-	# save in database
-	new_category.save()
-	print('Category created successfully!')
-
-
-
-
-	
