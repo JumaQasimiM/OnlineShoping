@@ -14,7 +14,7 @@ class Order:
 		cursor = DatabaseConnection.get_cursor()
 		cursor.execute('''INSERT INTO orders(user_id, totle_amount, status)
 						  VALUES (?,?,?) ''', (self.user_id, self.totle_amount, self.status))
-		cursor._connection.commit()
+		cursor.connection.commit()
 
 	#update stutus
 	@staticmethod
@@ -27,6 +27,7 @@ class Order:
 	# get all user's orders 
 	@staticmethod
 	def get_orders_by_user(user_id):
+
 		cursor = DatabaseConnection.get_cursor()
 		cursor.execute('SELECT * FROM orders WHERE user_id = ?',(user_id))
 		orders = cursor.fetchall()
@@ -37,12 +38,13 @@ class Order:
 
 if __name__ == '__main__':
 	new_order = Order(user_id = 1, totle_amount = 3,status = 'pending')
-	new1_order = Order(user_id = 1, totle_amount = 4,status = 'completed')
+	# new1_order = Order(user_id = 1, totle_amount = 4,status = 'completed')
 	new_order.save()
 
-	# update status
-	Order.update_status(1,'completed')
-	print('Order updated successfully!')
-	# get all orders form one user
+
+	# # update status
+	# Order.update_status(1,'completed')
+	# print('Order updated successfully!')
+	# # get all orders form one user
 	user_orders = Order.get_orders_by_user(1)
-	print('user orders: ', user_orders)
+	# print('user orders: ', user_orders)
